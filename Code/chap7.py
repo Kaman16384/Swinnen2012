@@ -63,13 +63,53 @@ def inverse(ch):
     return reverse
 
 # Exercice 7.13
-#
+# L'idée ici est de compter la différence etre les espaces. Pour avoir un mot
+# il suffit que la distance entre 2 espaces soit supérieure à 1
 def compteMots(ph):
-    if ph[0] != " ":
-        n = 0
-    else:
-        n = 1
+    p = ' ' + ph + ' '
+    t = []
+    for k in range(len(p)):
+        if p[k] == ' ':
+            t.append(k)
 
-    return n
+    cpt = 0
+    for k  in range(len(t)-1):
+        if t[k+1] - t[k] > 1:
+            cpt += 1
+
+    return cpt
 
 # Exercice 7.14
+def volBoite2(x1=10, x2=10, x3=10):
+    return x1 * x2 * x3
+
+# Exercice 7.15
+def volBoite3(x1, x2, x3):
+    if x1:
+        if x2:
+            if x3:
+                return x1 * x2 * x3
+            else:
+                return (x2 * x1 ** 2) / 3
+        else:
+            return x1 ** 3
+    else:
+        return -1
+
+# Exercice 7.16
+def changeCar(ch, ca1, ca2, debut=0, fin=0):
+    new = ""
+    if not fin:
+        fin = len(ch) - 1
+    for k in range(len(ch)):
+        if k <= fin and k >= debut and ch[k] == ca1:
+            new += ca2
+        else:
+            new += ch[k]
+    return new
+
+# Exercice 7.17
+def eleMax(liste, debut=0 , fin=0):
+    if not fin:
+        fin = len(liste) + 1
+    return indexMax(liste[debut:fin])
