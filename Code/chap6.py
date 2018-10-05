@@ -10,12 +10,12 @@ from math import sqrt, pi
 # Converti une vitesse en milles / heures en km/h et m/s
 vitesse = 10
 conv = vitesse * 1609 / 3600
-print("Vitesse en km/h: ", conv)
-print("Vitesse en m/s: ", conv*3.6)
+print("Vitesse en m/s: ", conv)
+print("Vitesse en km/h: ", conv*3.6)
 
 # Exercice 6.2
 # Calcul le périmètre et l'aire d'un triangle quelconque
-a, b, c = 1; 4, 3
+a, b, c = 1, 4, 3
 d = (a + b + c) / 2
 print("Périmètre: ", d*2)
 print("Aire: ", sqrt(d*(d-a)*(d-b)*(d-c)))
