@@ -43,11 +43,11 @@ def compteCar(ca, ch):
 
 # Exercice 7.10
 def indexMax(liste):
-    max = liste[0]
+    max , index= liste[0], 0
     for k in range(len(liste)):
         if max < liste[k]:
-            max = liste[k]
-    return max
+            max, index = liste[k], k
+    return index
 
 # Exercice 7.11
 def nomMois(n):
@@ -112,4 +112,4 @@ def changeCar(ch, ca1, ca2, debut=0, fin=0):
 def eleMax(liste, debut=0 , fin=0):
     if not fin:
         fin = len(liste) + 1
-    return indexMax(liste[debut:fin])
+    return liste[indexMax(liste[debut:fin])]
